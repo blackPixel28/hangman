@@ -66,3 +66,14 @@ body {
   /* visibility: visible; */
   z-index: 10;
 }
+
+.winner button {
+  display: block;
+  position: fixed;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 24px;
+  padding: 10px 20px;
+}

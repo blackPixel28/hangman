@@ -21,7 +21,6 @@ class Game {
         this.word.innerHTML += '_';
       }
     }
-    // this.currentInnerHtml = this.word.innerHTML;
   }
 
   checkLetter(letter) {
@@ -57,6 +56,15 @@ class Game {
     }
   }
 
+  createReloadBtn() {
+    const btn = document.createElement('button');
+    btn.textContent = 'reload';
+    this.wins.appendChild(btn);
+    btn.addEventListener('click', () => {
+      window.location.reload();
+    });
+  }
+
   winner() {
     this.currentInnerHtml = this.word.innerHTML;
     console.log(this.currentInnerHtml);
@@ -67,6 +75,7 @@ class Game {
         this.wins.style.color = 'crimson';
         this.wins.style.visibility = 'visible';
         this.wins.innerHTML = 'przegrałeś';
+        this.createReloadBtn();
       }
       this.stats.innerHTML = this.life;
     } else {
@@ -74,6 +83,7 @@ class Game {
       this.wins.style.color = 'green';
       this.wins.style.visibility = 'visible';
       this.wins.innerHTML = 'wygrałeś';
+      this.createReloadBtn();
     }
   }
 
