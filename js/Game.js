@@ -57,23 +57,23 @@ class Game {
     }
   }
 
-  winner(label) {
+  winner() {
     this.currentInnerHtml = this.word.innerHTML;
     console.log(this.currentInnerHtml);
 
     if (this.currentInnerHtml.includes('_')) {
       if (this.life <= 0) {
         console.log('you lost');
+        this.wins.style.color = 'crimson';
         this.wins.style.visibility = 'visible';
-        this.wins.innerHTML = 'PRZEGRAŁEŚ';
-        // alert('YOU LOST');
-        // window.location.reload();
+        this.wins.innerHTML = 'przegrałeś';
       }
       this.stats.innerHTML = this.life;
     } else {
       console.log('win');
-      alert('YOU WIN');
-      window.location.reload();
+      this.wins.style.color = 'green';
+      this.wins.style.visibility = 'visible';
+      this.wins.innerHTML = 'wygrałeś';
     }
   }
 
