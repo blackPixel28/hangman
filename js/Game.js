@@ -56,10 +56,13 @@ class Game {
       });
     }
   }
-
   createReloadBtn() {
     const btn = document.createElement('button');
-    btn.textContent = 'reload';
+    const i = document.createElement('i');
+    btn.textContent = 'reload ';
+    i.className = 'fas fa-redo';
+    btn.appendChild(i);
+
     this.wins.appendChild(btn);
     btn.addEventListener('click', () => {
       window.location.reload();
