@@ -45,5 +45,6 @@ body {
 .letter button {
   font-size: 20px;
   padding: 4px 8px;
+  margin: 6px;
   text-transform: uppercase;
 }
