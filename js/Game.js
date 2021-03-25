@@ -1,7 +1,8 @@
 class Game {
   passwords = ['krowa', 'myszka', 'wydra', 'kurczak'];
   visibleLetter = [];
-  life = 5;
+  life = 10;
+  time = 500;
 
   constructor({ word, letter, stats, wins }) {
     this.word = word;
@@ -72,18 +73,22 @@ class Game {
     if (this.currentInnerHtml.includes('_')) {
       if (this.life <= 0) {
         console.log('you lost');
-        this.wins.style.color = 'crimson';
-        this.wins.style.visibility = 'visible';
-        this.wins.innerHTML = 'przegrałeś';
-        this.createReloadBtn();
+        setTimeout(() => {
+          this.wins.style.color = 'crimson';
+          this.wins.style.visibility = 'visible';
+          this.wins.innerHTML = 'przegrałeś';
+          this.createReloadBtn();
+        }, this.time);
       }
       this.stats.innerHTML = this.life;
     } else {
       console.log('win');
-      this.wins.style.color = 'green';
-      this.wins.style.visibility = 'visible';
-      this.wins.innerHTML = 'wygrałeś';
-      this.createReloadBtn();
+      setTimeout(() => {
+        this.wins.style.color = 'green';
+        this.wins.style.visibility = 'visible';
+        this.wins.innerHTML = 'wygrałeś';
+        this.createReloadBtn();
+      }, this.time);
     }
   }
 
