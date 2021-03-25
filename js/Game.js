@@ -3,10 +3,12 @@ class Game {
   visibleLetter = [];
   life = 5;
 
-  constructor({ word, letter, stats }) {
+  constructor({ word, letter, stats, wins }) {
     this.word = word;
     this.letter = letter;
     this.stats = stats;
+    this.wins = wins;
+
     this.currentPassword;
   }
 
@@ -62,8 +64,10 @@ class Game {
     if (this.currentInnerHtml.includes('_')) {
       if (this.life <= 0) {
         console.log('you lost');
-        alert('YOU LOST');
-        window.location.reload();
+        this.wins.style.visibility = 'visible';
+        this.wins.innerHTML = 'PRZEGRAŁEŚ';
+        // alert('YOU LOST');
+        // window.location.reload();
       }
       this.stats.innerHTML = this.life;
     } else {
@@ -87,5 +91,6 @@ const game = new Game({
   word: document.querySelector('div.word'),
   letter: document.querySelector('div.letter'),
   stats: document.querySelector('div.stats span'),
+  wins: document.querySelector('div.winner'),
 });
 game.start();
