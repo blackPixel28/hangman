@@ -11,13 +11,13 @@ body {
 }
 .hangman {
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 96vw;
   max-width: 800px;
   height: auto;
-  min-height: 500px;
+  min-height: 320px;
   background-color: white;
   border: 0px solid #111;
   color: #333;
@@ -31,7 +31,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 6px;
   padding: 20px;
-  font-size: 32px;
+  font-size: 42px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ccc;
   min-height: 79px;
