@@ -1,16 +1,33 @@
 class Game {
   passwords = ['krowa', 'myszka', 'wydra', 'kurczak'];
-  visibleLetter = ['a'];
+  visibleLetter = [];
   constructor({ word, letter }) {
     this.word = word;
     this.letter = letter;
+    this.currentPassword;
+  }
+
+  drawPassword() {
+    this.word.innerHTML = '';
+    for (const char of this.currentPassword) {
+      if (char === ' ' || this.visibleLetter.includes(char)) {
+        this.word.innerHTML += char;
+      } else {
+        this.word.innerHTML += '_';
+      }
+    }
+  }
+
+  checkLetter(letter) {
+    if (this.currentPassword.includes(letter)) {
+      this.visibleLetter.push(letter);
+    }
   }
 
   getWord() {
     const randomWord = Math.floor(Math.random() * this.passwords.length);
-    this.word.innerHTML = this.passwords[randomWord];
-    console.log('wylosowane słowo: ' + this.passwords[randomWord]);
-    const randomPassword = this.passwords[randomWord];
+    this.currentPassword = this.passwords[randomWord];
+    console.log(this.currentPassword);
   }
 
   getLetter() {
@@ -23,6 +40,10 @@ class Game {
       btn.addEventListener('click', (e) => {
         e.target.disabled = true;
         console.log(label);
+
+        this.checkLetter(label);
+        console.log(this.visibleLetter);
+        this.drawPassword();
       });
     }
   }
@@ -30,6 +51,7 @@ class Game {
     console.log('start game');
     this.getWord();
     this.getLetter();
+    this.drawPassword();
   }
 }
 
