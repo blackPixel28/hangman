@@ -1,9 +1,12 @@
 class Game {
   passwords = ['krowa', 'myszka', 'wydra', 'kurczak'];
   visibleLetter = [];
-  constructor({ word, letter }) {
+  life = 5;
+
+  constructor({ word, letter, stats }) {
     this.word = word;
     this.letter = letter;
+    this.stats = stats;
     this.currentPassword;
   }
 
@@ -16,11 +19,14 @@ class Game {
         this.word.innerHTML += '_';
       }
     }
+    // this.currentInnerHtml = this.word.innerHTML;
   }
 
   checkLetter(letter) {
     if (this.currentPassword.includes(letter)) {
       this.visibleLetter.push(letter);
+    } else {
+      this.life--;
     }
   }
 
@@ -44,16 +50,42 @@ class Game {
         this.checkLetter(label);
         console.log(this.visibleLetter);
         this.drawPassword();
+        this.winner();
       });
     }
   }
+
+  winner(label) {
+    this.currentInnerHtml = this.word.innerHTML;
+    console.log(this.currentInnerHtml);
+
+    if (this.currentInnerHtml.includes('_')) {
+      if (this.life <= 0) {
+        console.log('you lost');
+        alert('YOU LOST');
+        window.location.reload();
+      }
+      this.stats.innerHTML = this.life;
+    } else {
+      console.log('win');
+      alert('YOU WIN');
+      window.location.reload();
+    }
+  }
+
   start() {
     console.log('start game');
     this.getWord();
     this.getLetter();
     this.drawPassword();
+
+    this.stats.innerHTML = this.life;
   }
 }
 
-const game = new Game({ word: document.querySelector('div.word'), letter: document.querySelector('div.letter') });
+const game = new Game({
+  word: document.querySelector('div.word'),
+  letter: document.querySelector('div.letter'),
+  stats: document.querySelector('div.stats span'),
+});
 game.start();

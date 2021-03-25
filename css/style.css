@@ -11,9 +11,9 @@ body {
 }
 .hangman {
   position: absolute;
-  top: 25%;
+  top: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   width: 96vw;
   max-width: 800px;
   height: auto;
