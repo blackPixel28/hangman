@@ -22,12 +22,12 @@ class Game {
   life = 3;
   time = 500;
 
-  constructor({ word, letter, stats, wins, category }) {
+  constructor({ word, letter, stats, wins, hint }) {
     this.word = word;
     this.letter = letter;
     this.stats = stats;
     this.wins = wins;
-    this.category = category;
+    this.hint = hint;
   }
 
   drawPassword() {
@@ -52,7 +52,7 @@ class Game {
   getWord() {
     const randomWord = Math.floor(Math.random() * this.passwords.length);
     this.currentPassword = this.passwords[randomWord].text;
-    this.category.innerHTML = this.passwords[randomWord].prompt;
+    this.hint.innerHTML = this.passwords[randomWord].prompt;
     // console.log(this.currentPassword);
   }
 
@@ -128,6 +128,6 @@ const game = new Game({
   letter: document.querySelector('div.letter'),
   stats: document.querySelector('div.stats span'),
   wins: document.querySelector('div.winner'),
-  category: document.querySelector('div.category span'),
+  hint: document.querySelector('div.hint span'),
 });
 game.start();

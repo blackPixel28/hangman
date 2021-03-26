@@ -40,7 +40,7 @@ body {
   min-height: 79px;
 }
 
-.category {
+.hint {
   width: 100%;
   padding: 10px 20px;
   background-color: #f9f9f9;
@@ -53,11 +53,11 @@ body {
   color: royalblue;
   text-shadow: 0px 0px 1px darkblue;
 }
-.category i {
+.hint i {
   font-size: 160%;
   padding: 0 6px;
 }
-.category span {
+.hint span {
   padding: 0 10px;
   letter-spacing: 1px;
 }
