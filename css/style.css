@@ -5,6 +5,7 @@
 }
 html {
   font-family: 'Oswald', sans-serif;
+  font-size: 10px;
 }
 body {
   background-color: #f9f9f9;
@@ -46,10 +47,18 @@ body {
   border-bottom: 1px solid #ccc;
   text-transform: uppercase;
   letter-spacing: 1.2px;
+  font-weight: 400;
+  font-size: 140%;
+  color: royalblue;
+}
+.category i {
+  font-size: 160%;
+  padding: 0 6px;
 }
 .category span {
   font-weight: 700;
   padding: 0 10px;
+  letter-spacing: 1px;
 }
 
 .letter {
@@ -60,8 +69,19 @@ body {
 .letter button {
   font-size: 20px;
   padding: 4px 8px;
+  min-width: 38px;
   margin: 6px;
   text-transform: uppercase;
+  background: #ddd;
+  border: 1px solid transparent;
+  color: #444;
+  font-weight: 700;
+  border-radius: 2px;
+}
+.letter button:hover {
+  background: #eee;
+  color: #111;
+  border: 1px solid #111;
 }
 
 .winner {
@@ -88,11 +108,22 @@ body {
   text-transform: uppercase;
   font-size: 24px;
   padding: 10px 20px;
+
+  background: #111;
+  border: 1px solid #ccc;
+  color: #eee;
+  font-weight: 700;
+  border-radius: 2px;
+}
+.winner button:hover {
+  border: 1px solid lightskyblue;
+  color: lightskyblue;
 }
 
 .stats {
   margin-bottom: 10px;
   text-transform: uppercase;
+  font-size: 200%;
 }
 .stats span.life {
   color: crimson;
