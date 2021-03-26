@@ -105,7 +105,7 @@ class Game {
     } else {
       console.log('win');
       setTimeout(() => {
-        this.wins.style.color = 'green';
+        this.wins.style.color = 'springgreen';
         this.wins.style.visibility = 'visible';
         this.wins.innerHTML = 'wygrałeś';
         this.createReloadBtn();
