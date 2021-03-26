@@ -2,19 +2,19 @@ class Game {
   passwords = [
     {
       text: 'krowa',
-      tips: 'daję mleko',
+      prompt: 'daję mleko',
     },
     {
       text: 'myszka',
-      tips: 'zjadam ser',
+      prompt: 'zjadam ser',
     },
     {
       text: 'rybka',
-      tips: 'pływam w akwarium',
+      prompt: 'pływam w akwarium',
     },
     {
       text: 'wydra',
-      tips: 'pływam na plecech',
+      prompt: 'pływam na plecech',
     },
   ];
   currentPassword;
@@ -52,7 +52,7 @@ class Game {
   getWord() {
     const randomWord = Math.floor(Math.random() * this.passwords.length);
     this.currentPassword = this.passwords[randomWord].text;
-    this.category.innerHTML = this.passwords[randomWord].tips;
+    this.category.innerHTML = this.passwords[randomWord].prompt;
     // console.log(this.currentPassword);
   }
 

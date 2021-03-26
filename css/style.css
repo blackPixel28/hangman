@@ -18,7 +18,7 @@ body {
   width: 96vw;
   max-width: 800px;
   height: auto;
-  min-height: 320px;
+  min-height: 400px;
   background-color: white;
   border: 0px solid #111;
   color: #333;
@@ -30,7 +30,7 @@ body {
 .word {
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 6px;
+  letter-spacing: 13px;
   padding: 20px;
   font-size: 42px;
   border-top: 1px solid #ddd;
