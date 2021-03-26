@@ -1,16 +1,33 @@
 class Game {
-  passwords = ['krowa', 'myszka', 'wydra', 'kurczak'];
+  passwords = [
+    {
+      text: 'krowa',
+      tips: 'daję mleko',
+    },
+    {
+      text: 'myszka',
+      tips: 'zjadam ser',
+    },
+    {
+      text: 'rybka',
+      tips: 'pływam w akwarium',
+    },
+    {
+      text: 'wydra',
+      tips: 'pływam na plecech',
+    },
+  ];
+  currentPassword;
   visibleLetter = [];
-  life = 10;
+  life = 3;
   time = 500;
 
-  constructor({ word, letter, stats, wins }) {
+  constructor({ word, letter, stats, wins, category }) {
     this.word = word;
     this.letter = letter;
     this.stats = stats;
     this.wins = wins;
-
-    this.currentPassword;
+    this.category = category;
   }
 
   drawPassword() {
@@ -34,8 +51,9 @@ class Game {
 
   getWord() {
     const randomWord = Math.floor(Math.random() * this.passwords.length);
-    this.currentPassword = this.passwords[randomWord];
-    console.log(this.currentPassword);
+    this.currentPassword = this.passwords[randomWord].text;
+    this.category.innerHTML = this.passwords[randomWord].tips;
+    // console.log(this.currentPassword);
   }
 
   getLetter() {
@@ -110,5 +128,6 @@ const game = new Game({
   letter: document.querySelector('div.letter'),
   stats: document.querySelector('div.stats span'),
   wins: document.querySelector('div.winner'),
+  category: document.querySelector('div.category span'),
 });
 game.start();

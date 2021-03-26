@@ -38,6 +38,20 @@ body {
   min-height: 79px;
 }
 
+.category {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+.category span {
+  font-weight: 700;
+  padding: 0 10px;
+}
+
 .letter {
   margin-top: 20px;
   padding: 30px 20px;
