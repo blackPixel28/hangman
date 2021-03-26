@@ -121,6 +121,7 @@ body {
 .winner button:hover {
   border: 1px solid lightskyblue;
   color: lightskyblue;
+  cursor: pointer;
 }
 
 .stats {
