@@ -100,3 +100,9 @@ body {
 .stats i {
   color: crimson;
 }
+
+@media (max-width: 360px) {
+  .hangman {
+    top: 2%;
+  }
+}
